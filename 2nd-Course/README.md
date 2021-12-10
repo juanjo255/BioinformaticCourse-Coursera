@@ -1,5 +1,5 @@
 # Genome sequencing (Bioinformatics II) 
-### by @juanjo255 and @javelezz1
+#### By [@juanjo255]( https://github.com/juanjo255) & [@javelezz1](https://github.com/javelezz1)
 
 <br/>
 * Here we are doing second course of bioinformatic specialization.
