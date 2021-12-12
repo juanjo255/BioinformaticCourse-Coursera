@@ -9,3 +9,12 @@ def KmerComposition (k, dna):
         out.write (dna[i:i+k])
         out.write ("\n")
 #KmerComposition (int (file.readline()), file.readline())
+
+# Function to obtain a DNA string of its Kmer composition
+def DnaFromKmer (entry):
+    out.write(entry[0])
+    del entry [0]
+    for i in entry:
+        out.write (i[-1])
+#DnaFromKmer (file.read().strip().split("\n"))
+
