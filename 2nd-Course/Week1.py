@@ -50,4 +50,19 @@ def debrujin (k, dna):
         out.write (i + " -> ")
         out.writelines (",".join (result))
         out.write ("\n")
-debrujin (int (file.readline()), file.readline())
+#debrujin (int (file.readline()), file.readline())
+
+# Function to return debrujin graph as an adjacency list from Kmers composition
+def debrujinFromKmers (entry):
+    result = dict()
+    for i in entry:
+        if not (i [:-1] in result):
+            result [ i[:-1] ] = i[1:]
+        else:
+            result [ i[:-1] ] = result[ i[:-1] ] + "," + i[1:]
+            
+    for key, val in result.items():
+        out.write(key + " -> ")
+        out.write (val)
+        out.write("\n")
+debrujinFromKmers (file.read().strip().split("\n"))
