@@ -18,3 +18,20 @@ def DnaFromKmer (entry):
         out.write (i[-1])
 #DnaFromKmer (file.read().strip().split("\n"))
 
+# Function to return overlap graph in an adjacency list
+def overlapGraph (entry):
+    for i in range (0, len(entry)):
+        result = list()
+        for j in range (0, len(entry)):
+            if i == j:
+                continue
+            elif entry [i][1:] == entry [j][:-1]:
+                result.append (entry [j])
+                
+        if result:
+            out.write (entry [i])
+            out.write(" -> ")
+            out.write(",".join (result))
+            out.write("\n")    
+#overlapGraph(file.read().strip().split("\n"))
+
