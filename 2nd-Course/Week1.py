@@ -5,9 +5,12 @@ out = open ("fileOut.txt", "w")
 # Function to obtain k-mer composition of a DNA string
 def KmerComposition (k, dna):
     dna = dna.strip()
+    result = list ()
     for i in range (0, len (dna)-k+1):
-        out.write (dna[i:i+k])
-        out.write ("\n")
+        #out.write (dna[i:i+k])
+        #out.write ("\n")
+        result.append(dna [i:i+k])
+    return result
 #KmerComposition (int (file.readline()), file.readline())
 
 # Function to obtain a DNA string of its Kmer composition
@@ -35,3 +38,16 @@ def overlapGraph (entry):
             out.write("\n")    
 #overlapGraph(file.read().strip().split("\n"))
 
+# Function to return debrujin graph as an adjacency list
+def debrujin (k, dna):
+    kmers = KmerComposition(k,dna)
+    nodes = [i[:-1] for i in kmers]
+    for i in set (nodes):
+        result = list()
+        for j in kmers:
+            if i == j [:-1]:
+                result.append (j[1:])
+        out.write (i + " -> ")
+        out.writelines (",".join (result))
+        out.write ("\n")
+debrujin (int (file.readline()), file.readline())
