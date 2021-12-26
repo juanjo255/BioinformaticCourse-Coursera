@@ -65,4 +65,4 @@ def debrujinFromKmers (entry):
         out.write(key + " -> ")
         out.write (val)
         out.write("\n")
-debrujinFromKmers (file.read().strip().split("\n"))
+#debrujinFromKmers (file.read().strip().split("\n"))
